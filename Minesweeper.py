@@ -32,7 +32,10 @@ class msBoard:
         self.userBoard = np.zeros((dim,dim), dtype= int)
         self.genBoard()
         
-    
+    def clearUserBoard(self):
+        self.userBoard = np.zeros((self.dim,self.dim), dtype= int)
+
+
     def printBoard(self,boardType):
         """Prints board given the type to print
 
@@ -43,7 +46,7 @@ class msBoard:
         pltMap = {-1 : "M", 10 : "F", 9 : "v", 13 : "E"}
         for i in range(9): pltMap[i] = i
         
-        plt.figure(figsize = (6,6))
+        plt.figure(figsize = (9,9))
         #colors = ["beige"]
         #colormap =  matplotlib.colors.ListedColormap(colors)
         plt.pcolor(board,edgecolors = "black", cmap = 'Set3', linewidths = 1)
